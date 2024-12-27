@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  font-family: var(--font-kanit), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: var(--font-kanit), sans-serif;
+  color: var(--c-black);
+}
+
+input {
+  font-family: var(--font-kanit), sans-serif !important;
+}

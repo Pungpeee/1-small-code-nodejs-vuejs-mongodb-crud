@@ -1,0 +1,15 @@
+.link {
+  @apply underline font-medium text-stone-900 hover:text-blue-600 cursor-pointer transition-all duration-200;
+}
+
+.link2 {
+  @apply transition-all duration-200 text-base text-[--c-link] hover:text-[--c-green] font-light;
+}
+
+.btn-x-only {
+  @apply border-none px-2 text-[--c-gray] flex-none pr-3;
+
+  &:hover {
+    color: var(--c-red) !important;
+  }
+}

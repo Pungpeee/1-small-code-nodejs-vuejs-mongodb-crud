@@ -1,0 +1,11 @@
+.ant-breadcrumb__custom {
+  @apply text-lg mb-6;
+
+  .ant-breadcrumb-link a:hover {
+    @apply bg-transparent;
+  }
+
+  ol > li:last-child .ant-breadcrumb-link {
+    @apply font-normal text-[--c-green];
+  }
+}
