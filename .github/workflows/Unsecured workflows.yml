@@ -13,12 +13,12 @@
 #         uses: actions/checkout@v3
 
 #       - name: Build image
-#         run: docker build -t pungpeee19/1-small-code-inp:latest .
+#         run: docker build -t pungpeee19/1-small-code-lkt:latest .
 
 #       - name: Push image to Docker Hub
 #         run: |
 #           docker login -u pungpeee19 -p ${{ secrets.DOCKER_HUB_TOKEN }}
-#           docker push pungpeee19/1-small-code-inp:latest
+#           docker push pungpeee19/1-small-code-lkt:latest
  
 #   deploy:
 #     needs: build
@@ -38,16 +38,16 @@
 #           echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login -u pungpeee19 --password-stdin
 
 #           # Pull the latest image
-#           docker pull pungpeee19/1-small-code-inp:latest
+#           docker pull pungpeee19/1-small-code-lkt:latest
 
 #           # Stop and remove the existing container if it exists
-#           if [ $(docker ps -q -f name=1-small-code-inp) ]; then
-#             docker stop 1-small-code-inp
-#             docker rm 1-small-code-inp
+#           if [ $(docker ps -q -f name=1-small-code-lkt) ]; then
+#             docker stop 1-small-code-lkt
+#             docker rm 1-small-code-lkt
 #           fi
 
 #           # Run the new container
-#           docker run -d --restart=always -p 1001:3000 --name 1-small-code-inp pungpeee19/1-small-code-inp:latest
+#           docker run -d --restart=always -p 1001:3000 --name 1-small-code-lkt pungpeee19/1-small-code-lkt:latest
 
 #           # Verify running containers
 #           docker ps -a
@@ -67,8 +67,8 @@
 #       #   run: |
 #       #       docker login -u pungpeee19 -p ${{ secrets.DOCKER_HUB_TOKEN }}
 #       #       ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} 
-#       #       docker pull pungpeee19/1-small-code-inp:latest
+#       #       docker pull pungpeee19/1-small-code-lkt:latest
 #       #       docker images
 #       #       docker run -d --restart=always -p 1001:3000 \
-#       #           --name 1-small-code-inp \
-#       #           pungpeee19/1-small-code-inp:latest
+#       #           --name 1-small-code-lkt \
+#       #           pungpeee19/1-small-code-lkt:latest
