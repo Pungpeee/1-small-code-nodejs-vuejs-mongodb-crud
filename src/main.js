@@ -1,16 +1,10 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
-import './assets/tailwind.css'
-import content from '@/components/content.vue'
-import navBar from '@/components/navBar.vue'
+import router from './routes';
 
+Vue.config.productionTip = false
 
-
-createApp(App).component('content-layout',content)
-.component('navBar-layout',navBar)
-
-
-
-.use(store).use(router).mount('#app')
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app')
