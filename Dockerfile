@@ -1,14 +1,19 @@
+
 FROM node:18-alpine
 
-RUN mkdir -p /usr/src
-WORKDIR /usr/src
 
-COPY . .
+WORKDIR /usr/src/app
 
+
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install --frozen-lockfile
 
 
-RUN npm run build
+COPY . .
+
 EXPOSE 3000
+
 
 CMD ["npm", "build"]
