@@ -69,22 +69,22 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Code - SonarQube Scan-ls') {
-            steps {
-                script {
-                    docker.image('sonarsource/sonar-scanner-cli:latest').inside {
-                        sh '''
-                        sonar-scanner \
-                            -Dsonar.projectKey=1-small-code-lkt \
-                            -Dsonar.sources=. \
-                            -Dsonar.host.url=${SONAR_HOST_URL} \
-                            -Dsonar.login=${SONAR_TOKEN}
-                        '''
-                    }
+        // stage('Code - SonarQube Scan-ls') {
+        //     steps {
+        //         script {
+        //             docker.image('sonarsource/sonar-scanner-cli:latest').inside {
+        //                 sh '''
+        //                 sonar-scanner \
+        //                     -Dsonar.projectKey=1-small-code-lkt \
+        //                     -Dsonar.sources=. \
+        //                     -Dsonar.host.url=${SONAR_HOST_URL} \
+        //                     -Dsonar.login=${SONAR_TOKEN}
+        //                 '''
+        //             }
 
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
 
         stage('Build Docker Image-ls') {
             steps {

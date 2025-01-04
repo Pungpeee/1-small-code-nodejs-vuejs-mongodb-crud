@@ -5,11 +5,10 @@ WORKDIR /usr/src
 
 COPY . .
 
-RUN npm install sharp --ignore-scripts
-RUN npm install
+RUN npm install --frozen-lockfile
 
 
 RUN npm run build
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm", "build"]
